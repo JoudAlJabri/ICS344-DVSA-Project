@@ -1,0 +1,17 @@
+{
+  "_comment": "Sample package.json showing the dependency removal. The vulnerable 'node-serialize' entry has been removed from dependencies. Run `npm uninstall node-serialize` and `npm audit` before rebuilding the Lambda deployment bundle.",
+  "name": "DVSA-ORDER-MANAGER",
+  "version": "1.0.1",
+  "description": "Order router Lambda for DVSA (post-Lesson-09 fix)",
+  "main": "order-manager.js",
+  "dependencies": {
+    "_removed_node-serialize": "REMOVED — CVE-2017-5941 (insecure deserialization, no patch available)",
+    "node-jose": "^2.2.0",
+    "@aws-sdk/client-lambda": "^3.x",
+    "@aws-sdk/client-cognito-identity-provider": "^3.x"
+  },
+  "scripts": {
+    "audit": "npm audit --audit-level=moderate",
+    "preinstall": "npm audit --audit-level=high"
+  }
+}
