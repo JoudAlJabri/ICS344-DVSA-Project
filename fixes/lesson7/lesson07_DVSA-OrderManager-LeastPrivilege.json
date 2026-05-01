@@ -1,0 +1,24 @@
+{
+  "_comment": "FIXED — DVSA-OrderManager-LeastPrivilege inline policy. Replace <ACCOUNT_ID> with your AWS account ID before applying. The 12 ARNs match every legitimate downstream Lambda in DVSA-ORDER-MANAGER's switch(action) router. Admin functions (DVSA-ADMIN-*) are intentionally excluded.",
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": "lambda:InvokeFunction",
+      "Resource": [
+        "arn:aws:lambda:us-east-1:<ACCOUNT_ID>:function:DVSA-ORDER-NEW",
+        "arn:aws:lambda:us-east-1:<ACCOUNT_ID>:function:DVSA-ORDER-UPDATE",
+        "arn:aws:lambda:us-east-1:<ACCOUNT_ID>:function:DVSA-ORDER-CANCEL",
+        "arn:aws:lambda:us-east-1:<ACCOUNT_ID>:function:DVSA-ORDER-GET",
+        "arn:aws:lambda:us-east-1:<ACCOUNT_ID>:function:DVSA-ORDER-ORDERS",
+        "arn:aws:lambda:us-east-1:<ACCOUNT_ID>:function:DVSA-USER-ACCOUNT",
+        "arn:aws:lambda:us-east-1:<ACCOUNT_ID>:function:DVSA-USER-PROFILE",
+        "arn:aws:lambda:us-east-1:<ACCOUNT_ID>:function:DVSA-ORDER-SHIPPING",
+        "arn:aws:lambda:us-east-1:<ACCOUNT_ID>:function:DVSA-ORDER-BILLING",
+        "arn:aws:lambda:us-east-1:<ACCOUNT_ID>:function:DVSA-ORDER-COMPLETE",
+        "arn:aws:lambda:us-east-1:<ACCOUNT_ID>:function:DVSA-USER-INBOX",
+        "arn:aws:lambda:us-east-1:<ACCOUNT_ID>:function:DVSA-FEEDBACK-UPLOADS"
+      ]
+    }
+  ]
+}
