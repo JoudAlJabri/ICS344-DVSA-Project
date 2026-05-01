@@ -1,0 +1,15 @@
+{
+  "_comment": "VULNERABLE — AWS-managed policy AWSLambdaRole, attached to DVSA-ORDER-MANAGER's execution role. Resource: '*' allows the router to invoke any Lambda in the account, including admin-only functions.",
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "lambda:InvokeFunction"
+      ],
+      "Resource": [
+        "*"
+      ]
+    }
+  ]
+}
